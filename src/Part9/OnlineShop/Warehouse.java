@@ -1,10 +1,13 @@
 package Part9.OnlineShop;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Set;
+
 public class Warehouse {
-    Map<String, Integer> prices;
-    Map<String, Integer> stocks;
+    private Map<String, Integer> prices;
+    private Map<String, Integer> stocks;
     public Warehouse() {
         this.prices = new HashMap<>();
         this.stocks = new HashMap<>();
@@ -28,6 +31,15 @@ public class Warehouse {
             return true;
         }
         return false;
+
+    }
+
+    public Set<String> products(){
+        Set<String> set = new HashSet<>();
+        for(String key : prices.keySet()){
+            set.add(key);
+        }
+        return set;
 
     }
 
